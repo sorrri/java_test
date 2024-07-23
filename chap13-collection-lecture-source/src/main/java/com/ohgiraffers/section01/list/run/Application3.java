@@ -44,8 +44,8 @@ public class Application3 {
         /* 설명. list가 관리하는 요소들 제거 */
         arrList.remove(2);                          // LinkedList는 ArrayList와 달리 부분적인 요소 제거에서 성능이 우수
         System.out.println("arrList = " + arrList);
-        arrList.clear();                                  // 전체 요소들 제거 (비움)
-        System.out.println("arrList = " + arrList);
+//        arrList.clear();                                  // 전체 요소들 제거 (비움)
+//        System.out.println("arrList = " + arrList);
 
         /* 설명. 요소가 없는 list계열인지 확인 */
         System.out.println("isEmpty = " + arrList.isEmpty());
