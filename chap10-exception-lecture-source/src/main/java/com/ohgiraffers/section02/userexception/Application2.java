@@ -2,8 +2,6 @@ package com.ohgiraffers.section02.userexception;
 
 /* 수업목표. finally를 활용한 try-catch문 이해하고 활용하기 */
 
-import com.ohgiraffers.section01.exception.ExceptionTest;
-
 public class Application2 {
     public static void main(String[] args) {
         ExceptionTest et = new ExceptionTest();

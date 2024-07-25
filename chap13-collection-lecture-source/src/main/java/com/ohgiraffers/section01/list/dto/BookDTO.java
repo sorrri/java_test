@@ -1,5 +1,7 @@
 package com.ohgiraffers.section01.list.dto;
 
+import java.util.Objects;
+
 public class BookDTO implements Comparable <BookDTO> {
     private int number;
     private String title;
@@ -82,5 +84,18 @@ public class BookDTO implements Comparable <BookDTO> {
 
         /* 설명. 책 제목에 대한 내림차순 */
         return -this.title.compareTo(o.getTitle());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BookDTO bookDTO = (BookDTO) o;
+        return Objects.equals(title, bookDTO.title) && Objects.equals(author, bookDTO.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author);
     }
 }
