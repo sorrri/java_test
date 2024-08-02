@@ -20,8 +20,8 @@ public class Application5 {
                                                                 // offerFirst()나 offerLast()같은 메소드도 제공
 
         /* 설명. PriorityQueue를 활용하면선입선출 + 정렬의 개념을 가져갈 수 있다. */
-//        PriorityQueue<String> que = new PriorityQueue<>();                            // String의 기준대로 문자열 오름차순
-        PriorityQueue<String> que = new PriorityQueue<>(Collections.reverseOrder());    // 내림차순
+        PriorityQueue<String> que = new PriorityQueue<>();                            // String의 기준대로 문자열 오름차순
+//        PriorityQueue<String> que = new PriorityQueue<>(Collections.reverseOrder());    // 내림차순
 
         que.offer("first");
         que.offer("second");

@@ -45,8 +45,17 @@ public class MemberService {
         Member selectedMember = mr.selectMemberBy(memNo);
 
         if(selectedMember != null) {
-            System.out.println("조회된 회원은: " + selectedMember.getId() + " 아이디 회원");
-            return selectedMember;
+            Member newInstance = new Member();
+            newInstance.setMemNo(selectedMember.getMemNo());
+            newInstance.setId(selectedMember.getId());
+            newInstance.setPwd(selectedMember.getPwd());
+            newInstance.setAge(selectedMember.getAge());
+            String[] copiedHobbies = selectedMember.getHobbies().clone();
+            newInstance.setHobbies(copiedHobbies);
+            newInstance.setBloodType(selectedMember.getBloodType());
+
+            System.out.println("조회된 회원은: " + newInstance.getId() + " 아이디 회원");
+            return newInstance;
         } else {
             System.out.println("조회된 회원 정보가 없습니다.");
         }

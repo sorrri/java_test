@@ -2,6 +2,7 @@ package com.ohgiraffers.section04.testapp.aggregate;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Member implements Serializable {
     private int memNo;                          // 회원 번호
@@ -100,5 +101,20 @@ public class Member implements Serializable {
                 ", hobbies=" + Arrays.toString(hobbies) +
                 ", bloodType=" + bloodType +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(this == o) return true;
+        if(o == null || getClass() != o.getClass()) return false;
+        Member member = (Member) o;
+        return memNo == member.memNo && age == member.age &&
+                Objects.equals(id, member.id) && Objects.equals(pwd, member.pwd) && Objects.equals(email, member.email) &&
+                Objects.deepEquals(hobbies, member.hobbies) && bloodType == member.bloodType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(memNo, id, pwd, email, age, Arrays.hashCode(hobbies), bloodType);
     }
 }

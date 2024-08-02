@@ -192,13 +192,18 @@ public class MemberRepository {
 
     public int updateMember(Member reform) {
         for(int i = 0; i < memberList.size(); i++) {
-            if(memberList.get(i).getMemNo() == reform.getMemNo()) {
+            Member iMember = memberList.get(i);
+            if(iMember.getMemNo() == reform.getMemNo()) {
+                System.out.println("===== 수정 전 기존 회원 정보와의 비교 =====");
+                System.out.println("reform = " + reform);
+                System.out.println("iMember = " + iMember);
+
                 memberList.set(i, reform);
 
                 File file = new File("src/main/java/com/ohgiraffers/section04/testapp/db/memberDB.dat");
                 saveMembers(file, memberList);
 
-                return 1;
+                if (!iMember.equals(reform)) return 1;
             }
         }
         return 0;
