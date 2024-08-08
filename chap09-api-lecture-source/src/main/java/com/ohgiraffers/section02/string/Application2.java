@@ -5,7 +5,7 @@ package com.ohgiraffers.section02.string;
 *   문자열 객체를 만드는 방법
 *   1. "" 리터럴 형태: 동일한 값을 가지는 인스턴스(동등(h, e) 객체)를 단일 인스턴스로 관리
 *                    (singleton개념, 상수풀(constant pool) 활용)
-*   2. new String("") 형태: 매번 새로운 인스턴스를 생성 ( 주소 값이 매번 다름)
+*   2. new String("") 형태: 매번 새로운 인스턴스를 생성 (주소 값이 매번 다름)
 * */
 
 public class Application2 {
